@@ -33,6 +33,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import MyTabs from './MyTabs';
+import FormDialog from './Login';
 const drawerWidth = 230;
 
 const useStyles = makeStyles((theme) => ({
@@ -332,8 +333,7 @@ export default function ClippedDrawer() {
                         <SearchIcon className={classes.searchIcon} />
                     </div>
                     <div className={classes.space}></div>
-                    <Avatar className={classes.Avatar} alt="Remy Sharp" src="https://static.hdslb.com/images/akari.jpg" />
-                    <Button className={classes.textButton}>未登录</Button>
+                    <FormDialog />
                     <IconButton>
                         <Badge>
                             <MailOutlineIcon className={classes.menuIcon}></MailOutlineIcon>
