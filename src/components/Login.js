@@ -5,7 +5,6 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Avatar from '@material-ui/core/Avatar';
 import {
     withStyles,
 } from '@material-ui/core/styles';
@@ -57,6 +56,7 @@ export default function FormDialog() {
     const dispatch = useDispatch();
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -69,30 +69,17 @@ export default function FormDialog() {
     };
 
     return (
-
         <Fragment>
             <MyAvatar handleClickOpen={handleClickOpen} />
-            {/* <Avatar alt="Remy Sharp" src="https://static.hdslb.com/images/akari.jpg" style={{
-                width: "24px",
-                height: " 24px",
-                display: "flex"
-            }} />
-            <Button onClick={handleClickOpen} style={{
-                color: '#E39999'
-            }}>未登录</Button> */}
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
                 <DialogTitle id="form-dialog-title">登录</DialogTitle>
                 <DialogContent >
-                    {/* <DialogContentText>
-                        请输入注册手机号
-                    </DialogContentText> */}
                     <LoginForm setPassword={setPassword} setPhone={setPhone} />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleLogin} >
                         登录
                      </Button>
-
                 </DialogActions>
             </Dialog>
         </Fragment>

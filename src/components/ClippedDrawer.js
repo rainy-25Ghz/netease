@@ -4,36 +4,22 @@ import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import SearchIcon from '@material-ui/icons/Search';
 import { NeteaseIcon } from './icons/netease';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import IconButton from '@material-ui/core/IconButton';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
-import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
-import LiveTvIcon from '@material-ui/icons/LiveTv';
-import GetAppIcon from '@material-ui/icons/GetApp';
-import FilterDramaIcon from '@material-ui/icons/FilterDrama';
-import RadioIcon from '@material-ui/icons/Radio';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import FormDialog from './Login';
 import Main from './MainPage';
+import { MyList } from './MyList';
+import { MarkedList } from './MarkedList';
+import { CreatedList } from './CreatedList';
+import { RecommendList } from './RecommendedList';
+
 const drawerWidth = 230;
 
 const useStyles = makeStyles((theme) => ({
@@ -103,112 +89,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const RecommendList = () => {
-    return (
-        <List>
-            <ListItem button key={'发现音乐'}>
-                <ListItemIcon> <MusicNoteIcon /> </ListItemIcon>
-                <ListItemText primary={'发现音乐'} />
-            </ListItem>
-            <ListItem button key={'私人FM'}>
-                <ListItemIcon> <WifiTetheringIcon /> </ListItemIcon>
-                <ListItemText primary={'私人FM'} />
-            </ListItem>
-            <ListItem button key={'Look直播'}>
-                <ListItemIcon> <LiveTvIcon /> </ListItemIcon>
-                <ListItemText primary={'Look直播'} />
-            </ListItem>
-            <ListItem button key={'视频'}>
-                <ListItemIcon><VideocamOutlinedIcon /> </ListItemIcon>
-                <ListItemText primary={'视频'} />
-            </ListItem>
-            <ListItem button key={'朋友'}>
-                <ListItemIcon> <PeopleOutlineIcon /> </ListItemIcon>
-                <ListItemText primary={'朋友'} />
-            </ListItem>
-
-            {/* {['发现音乐', '私人FM', 'Look直播', '视频', '朋友'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>{index % 2 === 0 ? <MusicNoteIcon /> : <PeopleOutlineIcon />}</ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))} */}
-        </List>
-    )
-}
-const MyList = () => {
-    return (
-        <List>
-            <ListItem button key={'本地音乐'}>
-                <ListItemIcon> <MusicNoteIcon /> </ListItemIcon>
-                <ListItemText primary={'本地音乐'} />
-            </ListItem>
-            <ListItem button key={'下载管理'}>
-                <ListItemIcon> <GetAppIcon /> </ListItemIcon>
-                <ListItemText primary={'下载管理'} />
-            </ListItem>
-            <ListItem button key={'我的音乐云盘'}>
-                <ListItemIcon> <FilterDramaIcon /> </ListItemIcon>
-                <ListItemText primary={'我的音乐云盘'} />
-            </ListItem>
-            <ListItem button key={'我的电台'}>
-                <ListItemIcon><RadioIcon /> </ListItemIcon>
-                <ListItemText primary={'我的电台'} />
-            </ListItem>
-            <ListItem button key={'我的收藏'}>
-                <ListItemIcon> <StarBorderIcon /> </ListItemIcon>
-                <ListItemText primary={'我的收藏'} />
-            </ListItem>
-
-            {/* {['发现音乐', '私人FM', 'Look直播', '视频', '朋友'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>{index % 2 === 0 ? <MusicNoteIcon /> : <PeopleOutlineIcon />}</ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))} */}
-        </List>
-    )
-}
-const CreatedList = () => {
-    return (
-        <List>
-            <ListItem button key={'我喜欢的音乐'}>
-                <ListItemIcon> <FavoriteBorderIcon /> </ListItemIcon>
-                <ListItemText primary={'我喜欢的音乐'} />
-            </ListItem>
-            <ListItem button key={'创建歌单1'}>
-                <ListItemIcon> <QueueMusicIcon /> </ListItemIcon>
-                <ListItemText primary={'创建歌单1'} />
-            </ListItem>
-            <ListItem button key={'创建歌单2'}>
-                <ListItemIcon> <QueueMusicIcon /> </ListItemIcon>
-                <ListItemText primary={'创建歌单2'} />
-            </ListItem>
 
 
-        </List>
-    )
-}
-const MarkedList = () => {
-    return (
-        <List>
-            <ListItem button key={'收藏歌单1'}>
-                <ListItemIcon> <QueueMusicIcon /> </ListItemIcon>
-                <ListItemText primary={'收藏歌单1'} />
-            </ListItem>
-            <ListItem button key={'收藏歌单2'}>
-                <ListItemIcon> <QueueMusicIcon /> </ListItemIcon>
-                <ListItemText primary={'收藏歌单2'} />
-            </ListItem>
-            {/* {['发现音乐', '私人FM', 'Look直播', '视频', '朋友'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>{index % 2 === 0 ? <MusicNoteIcon /> : <PeopleOutlineIcon />}</ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))} */}
-        </List>
-    )
-}
+
+
 export default function ClippedDrawer() {
     const classes = useStyles();
 
@@ -275,7 +159,6 @@ export default function ClippedDrawer() {
 
 
             <Main clsName={classes.content} />
-
 
         </div >
     );

@@ -19,8 +19,8 @@ export const loginSlice = createSlice({
 });
 export const { login } = loginSlice.actions;
 export const selectLoginStatus = state => state.login.isLoggedIn;
-
-export const selectAvatarSrc = state => state.response ? state.response.profile.backgroundUrl : undefined;
+export const selectNickname = state => state.login.response ? state.login.response.profile.nickname : undefined;
+export const selectAvatarSrc = state => state.login.response ? state.login.response.profile.avatarUrl : undefined;
 export const asyncLogin = (phone, password) =>
     async dispatch => {
         const response = await loginApi(phone, password);
