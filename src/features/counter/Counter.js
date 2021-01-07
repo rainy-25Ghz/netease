@@ -7,16 +7,21 @@ import {
   incrementAsync,
   selectCount,
 } from './counterSlice';
+import { asyncLogin } from '../login/loginSlice'
 import styles from './Counter.module.css';
 
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
-
+  const response = useSelector(state => state.login.response ? state.login.response.cookie : "no response");
   return (
     <div>
       <div className={styles.row}>
+        <button onClick={() => { dispatch(asyncLogin('18851581383', '1212qqq')); }}>dispatch netease</button>
+        <p>
+          {response}
+        </p>
         <button
           className={styles.button}
           aria-label="Increment value"

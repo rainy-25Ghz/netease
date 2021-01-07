@@ -1,57 +1,98 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Avatar from '@material-ui/core/Avatar';
+import {
+    withStyles,
+} from '@material-ui/core/styles';
+import { useDispatch } from 'react-redux';
+import { asyncLogin } from '../features/login/loginSlice'
+import MyAvatar from './MyAvatar';
+const CssTextField = withStyles({
+    root: {
+        '& label.Mui-focused': {
+            color: '#c62f2f',
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: '#c62f2f',
+        },
+    },
+})(TextField);
+const LoginForm = ({ setPhone, setPassword }) => {
+
+    const handlePhoneChange = (e) => {
+        setPhone(e.target.value);
+    }
+    const handlePassChange = (e) => {
+        setPassword(e.target.value);
+    }
+    return (
+        <Fragment>
+            < CssTextField
+                autoFocus
+                margin="dense"
+                id="name"
+                label="请输入注册手机号"
+                type="tel"
+                fullWidth
+                onChange={handlePhoneChange}
+            />
+            < CssTextField
+                margin="dense"
+                id="name"
+                label="请输入密码"
+                type="password"
+                fullWidth
+                onChange={handlePassChange}
+            />
+        </Fragment>
+    )
+}
 export default function FormDialog() {
     const [open, setOpen] = React.useState(false);
-
+    const dispatch = useDispatch();
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
     const handleClickOpen = () => {
         setOpen(true);
     };
-
     const handleClose = () => {
         setOpen(false);
+    };
+    const handleLogin = () => {
+        setOpen(false);
+        dispatch(asyncLogin(phone, password));
     };
 
     return (
 
         <Fragment>
-            <Avatar alt="Remy Sharp" src="https://static.hdslb.com/images/akari.jpg" style={{
+            <MyAvatar handleClickOpen={handleClickOpen} />
+            {/* <Avatar alt="Remy Sharp" src="https://static.hdslb.com/images/akari.jpg" style={{
                 width: "24px",
                 height: " 24px",
                 display: "flex"
             }} />
             <Button onClick={handleClickOpen} style={{
                 color: '#E39999'
-            }}>未登录</Button>
+            }}>未登录</Button> */}
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
-                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We will send updates
-                        occasionally.
-          </DialogContentText>
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="name"
-                        label="Email Address"
-                        type="email"
-                        fullWidth
-                    />
+                <DialogTitle id="form-dialog-title">登录</DialogTitle>
+                <DialogContent >
+                    {/* <DialogContentText>
+                        请输入注册手机号
+                    </DialogContentText> */}
+                    <LoginForm setPassword={setPassword} setPhone={setPhone} />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Cancel
-          </Button>
-                    <Button onClick={handleClose} color="primary">
-                        Subscribe
-          </Button>
+                    <Button onClick={handleLogin} >
+                        登录
+                     </Button>
+
                 </DialogActions>
             </Dialog>
         </Fragment>

@@ -11,8 +11,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import InputBase from '@material-ui/core/InputBase';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
+import MyAvatar from './MyAvatar';
 const style = {
     'backgroundColor': '#c62f2f',
     'zIndex': '1201',
@@ -95,8 +94,7 @@ export default function HeadBar() {
                     />
                 </div>
                 <div className={classes.space}></div>
-                <Avatar className={classes.Avatar} alt="Remy Sharp" src="https://static.hdslb.com/images/akari.jpg" />
-                <Button className={classes.textButton}>未登录</Button>
+                <MyAvatar />
                 <IconButton>
                     <Badge>
                         <MailOutlineIcon className={classes.menuIcon}></MailOutlineIcon>

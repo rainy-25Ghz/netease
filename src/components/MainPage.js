@@ -1,20 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-    },
-}));
-export default function MainPage() {
-    const classes = useStyles();
+import MyTabs from './MyTabs';
+export default function Main({ clsName }) {
     return (
-
-        <main className={classes.content}>
-            <Toolbar />
+        <main className={clsName} id="scrollBarscrollBar">
+            <Toolbar style={{ Height: '28' }} />
+            <MyTabs />
             <Typography paragraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
@@ -26,7 +18,7 @@ export default function MainPage() {
                 imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
                 arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
                 donec massa sapien faucibus et molestie ac.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -37,7 +29,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -48,7 +40,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -59,7 +51,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -70,7 +62,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -81,7 +73,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -92,7 +84,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -103,7 +95,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
             <Typography paragraph>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
@@ -114,8 +106,7 @@ export default function MainPage() {
                 tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
                 nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
                 accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+            </Typography>
         </main>
-
     )
 }
