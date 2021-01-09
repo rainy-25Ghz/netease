@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import MyTabs from './MyTabs';
 export default function Main({ clsName }) {
     return (
-        <main className={clsName} id="scrollBarscrollBar">
+        <main style={{ backgroundColor: '#ffffff' }} className={clsName} id="scrollBarscrollBar">
             <Toolbar style={{ Height: '28' }} />
             <MyTabs />
             <Typography paragraph>
