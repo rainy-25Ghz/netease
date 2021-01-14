@@ -4,8 +4,30 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
+import { useSelector } from 'react-redux';
+import { selectPlaylist } from '../features/login/loginSlice';
+
 export const MarkedList = () => {
-    return (
+    const playlist = useSelector(selectPlaylist);
+    if (playlist) {
+        return (
+            <List>
+                {
+                    playlist.map((value, index) => {
+                        if (value.subscribed) {
+                            return (
+                                <ListItem button key={index}>
+                                    <ListItemIcon> <QueueMusicIcon /> </ListItemIcon>
+                                    <ListItemText primary={value.name} />
+                                </ListItem>)
+                        }
+                    })
+                }
+            </List>
+
+        )
+    }
+    else return (
         <List>
             <ListItem button key={'收藏歌单1'}>
                 <ListItemIcon> <QueueMusicIcon /> </ListItemIcon>

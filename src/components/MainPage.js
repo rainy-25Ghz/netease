@@ -2,11 +2,23 @@ import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MyTabs from './MyTabs';
+import Carousel from './Carousel';
+import { useEffect } from 'react';
+import { bannerApi } from '../services/login';
 export default function Main({ clsName }) {
+    const [srcs, setSrcs] = React.useState([]);
+    useEffect(() => {
+        bannerApi().then(res => {
+            setSrcs(res);
+            //console.log(res);
+        })
+    }, []);
     return (
+
         <main style={{ backgroundColor: '#ffffff' }} className={clsName} id="scrollBarscrollBar">
             <Toolbar style={{ Height: '28' }} />
             <MyTabs />
+            <Carousel srcs={srcs} />
             <Typography paragraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum

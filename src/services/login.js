@@ -29,3 +29,22 @@ export const playListApi = (uid) => {
     const url = PLAY_LIST_URL.concat(`?uid=${uid}`);
     return fetch(url).then(res => res.json()).catch(err => { console.log(err); });
 }
+
+// banner
+// 说明 : 调用此接口 , 可获取 banner( 轮播图 ) 数据
+// 可选参数 :
+// type:资源类型,对应以下类型,默认为 0 即PC
+// 0: pc
+// 1: android
+// 2: iphone
+// 3: ipad
+// 接口地址 : /banner
+// 调用例子 : /banner, /banner?type=2
+const BANNER_URL = '/banner';
+export const bannerApi = () => {
+    return fetch(BANNER_URL)
+        .then(res => res.json())
+        .then(json => json.banners)
+        .then(banners => banners.map(value => value.imageUrl))
+        .catch(err => { console.log(err); });
+}

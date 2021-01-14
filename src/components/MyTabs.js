@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 const AntTabs = withStyles({
     root: {
-        borderBottom: '1px solid #e8e8e8',
+        // borderBottom: '1px solid #e8e8e8',
     },
     indicator: {
         backgroundColor: 'rgba(207, 86, 86, 1)',
@@ -18,7 +18,8 @@ const AntTab = withStyles((theme) => ({
         textTransform: 'none',
         minWidth: 72,
         fontWeight: theme.typography.fontWeightRegular,
-        marginRight: theme.spacing(4),
+        fontSize: theme.spacing(2),
+        marginRight: theme.spacing(3),
         fontFamily: [
             '-apple-system',
             'BlinkMacSystemFont',
@@ -54,12 +55,11 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         display: 'flex',
         justifyContent: 'center',
+        marginBottom: theme.spacing(2),
+        borderBottom: '1px solid #e8e8e8',
     },
     padding: {
         padding: theme.spacing(3),
-    },
-    demo1: {
-        backgroundColor: theme.palette.background.paper,
     },
 }));
 
