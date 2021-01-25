@@ -1,6 +1,6 @@
-import { StarRateTwoTone } from '@material-ui/icons';
+
 import { createSlice } from '@reduxjs/toolkit';
-import { loginApi, playListApi } from '../../services/login';
+import { loginApi, playListApi } from '../../services/service';
 export const loginSlice = createSlice({
     name: 'login',
     initialState: {
@@ -30,6 +30,7 @@ export const selectPlaylist = state => state.login.playlist ? state.login.playli
 export const asyncLogin = (phone, password) =>
     async dispatch => {
         const response = await loginApi(phone, password);
+        if (!response.uid) return;
         const uid = response.profile.userId;
         const playlist = (await playListApi(uid)).playlist;
         dispatch(login({ password: password, phone: phone, response: response, uid: uid, playlist: playlist }));

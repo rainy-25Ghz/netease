@@ -18,8 +18,8 @@ import Main from './MainPage';
 import { MyList } from './MyList';
 import { MarkedList } from './MarkedList';
 import { CreatedList } from './CreatedList';
-import { RecommendList } from './RecommendedList';
-
+import { RecommendedBar } from './RecommendedBar';
+import { BottomBar } from './BottomBar';
 const drawerWidth = 230;
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     search: {
         position: 'relative',
         borderRadius: '12px',
-        backgroundColor: 'rgba(168, 40, 40, 1)',
+        backgroundColor: 'rgba(225, 62, 62, 1)',
         marginLeft: '2em',
         width: theme.spacing(40),
         height: "50%",
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
     },
     searchIcon: {
-        color: '#cd8282',
+        color: 'white',
         marginLeft: theme.spacing(2),
         marginRight: theme.spacing(3),
     },
@@ -49,10 +49,10 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing(2),
         flex: 1,
         width: theme.spacing(30),
-        color: '#cd8282'
+        color: '#ffe4e4'
     },
     appBar: {
-        backgroundColor: '#c62f2f',
+        backgroundColor: 'rgba(236, 65, 65, 1)',
         zIndex: theme.zIndex.drawer + 1,
     },
     drawer: {
@@ -81,11 +81,14 @@ const useStyles = makeStyles((theme) => ({
     menuIcon: {
         width: theme.spacing(3),
         height: theme.spacing(3),
-        color: '#E39999'
+        color: '#FFFFFF'
     },
     textButton: {
         marginLeft: theme.spacing(0),
-        color: '#E39999'
+        color: '#FFFFFF'
+    },
+    bottomBar: {
+        zIndex: theme.zIndex.drawer + 1,
     }
 }));
 
@@ -138,7 +141,7 @@ export default function ClippedDrawer() {
                     <Typography style={{ paddingLeft: '20px', paddingTop: '10px' }} variant="h6" noWrap>
                         推荐
                     </Typography>
-                    <RecommendList />
+                    <RecommendedBar />
                     <Divider />
                     <Typography style={{ paddingLeft: '20px', paddingTop: '10px' }} variant="h6" noWrap>
                         我的音乐
@@ -159,7 +162,7 @@ export default function ClippedDrawer() {
 
 
             <Main clsName={classes.content} />
-
+            <BottomBar className={classes.BottomBar} />
         </div >
     );
 }

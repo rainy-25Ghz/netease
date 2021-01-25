@@ -17,7 +17,7 @@ export default function MyAvatar({ handleClickOpen }) {
                 display: "flex"
             }} alt="Remy Sharp" src={src ? src : DEFAULT_AVATAR_URL} />
             <Button style={{
-                color: '#E39999'
+                color: 'white'
             }} onClick={handleClickOpen}>{!loggedIn ? '未登录' : name}</Button>
         </Fragment>
     )

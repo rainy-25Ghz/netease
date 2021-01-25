@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     itemContainer: {
         width: theme.spacing(90),
         height: theme.spacing(33),
+
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -65,9 +66,9 @@ export default function Carousel({ srcs }) {
                 <KeyboardArrowLeftIcon style={{ fontSize: 40 }} />
             </IconButton>
             <div className={classes.itemContainer}>
-                <img className={classes.itemLeft} src={srcs[ids[0]]} alt='nothing' />
-                <img className={classes.itemMid} src={srcs[ids[1]]} alt='nothing' />
-                <img className={classes.itemRight} src={srcs[ids[2]]} alt='nothing' />
+                <img className={classes.itemLeft} src={srcs ? srcs[ids[0]] : ''} alt='nothing' />
+                <img className={classes.itemMid} src={srcs ? srcs[ids[1]] : ''} alt='nothing' />
+                <img className={classes.itemRight} src={srcs ? srcs[ids[2]] : ''} alt='nothing' />
             </div>
             <IconButton onClick={handleRight} className={classes.rightArrow}>
                 <KeyboardArrowRightIcon style={{ fontSize: 40 }} />

@@ -8,7 +8,7 @@ import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
 import LiveTvIcon from '@material-ui/icons/LiveTv';
-export const RecommendList = () => {
+export const RecommendedBar = () => {
     return (
         <List>
             <ListItem button key={'发现音乐'}>

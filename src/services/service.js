@@ -48,3 +48,63 @@ export const bannerApi = () => {
         .then(banners => banners.map(value => value.imageUrl))
         .catch(err => { console.log(err); });
 }
+// 推荐歌单
+// 说明 : 调用此接口 , 可获取推荐歌单
+// 可选参数 : limit: 取出数量 , 默认为 30 (不支持 offset)
+// 接口地址 : /personalized
+// 调用例子 : /personalized?limit=1
+const RECOMMEND_LIST_URL = '/personalized';
+export const recommendListApi = (number) => {
+    const url = RECOMMEND_LIST_URL.concat(`?limit=${number}`);
+    return fetch(url)
+        .then(res => res.json())
+        .then(json => json.result ? json.result : undefined)
+        .catch(err => { console.log(err); });
+}
+
+//独家放送(入口列表)
+// 说明 : 调用此接口 , 可获取独家放送
+
+// 接口地址 : /personalized/privatecontent
+
+// 调用例子 : /personalized/privatecontent
+const EXCLUSIVE_LIST_URL = '/personalized/privatecontent';
+export const exclusiveListApi = () => {
+    return fetch(EXCLUSIVE_LIST_URL)
+        .then(res => res.json())
+        .then(json => json.result ? json.result : undefined)
+        .catch(err => { console.log(err); });
+}
+// 新歌速递
+// 说明 : 调用此接口 , 可获取新歌速递
+
+// 必选参数 :
+
+// type: 地区类型 id,对应以下:
+
+// 全部:0
+
+// 华语:7
+
+// 欧美:96
+
+// 日本:8
+
+// 韩国:16
+// 接口地址 : /top/song
+
+// 调用例子 : /top/song?type=96
+const NEW_SONGS_URL = '/top/song?type=0';
+export const newSongsApi = () => {
+    return fetch(NEW_SONGS_URL)
+        .then(res => res.json())
+        .then(json => json.data ? json.data : undefined)
+        .catch(err => { console.log(err); });
+}
+
+// 推荐 mv
+// 说明: 调用此接口, 可获取推荐 mv
+
+// 接口地址: /personalized/mv
+
+// 调用例子: /personalized/mv
