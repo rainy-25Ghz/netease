@@ -3,6 +3,8 @@ import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import { makeStyles } from '@material-ui/core/styles';
+import { useEffect } from 'react';
+import { bannerApi } from '../services/service';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -51,7 +53,9 @@ const useStyles = makeStyles((theme) => ({
         filter: 'brightness(0.5)',
     }
 }))
-export default function Carousel({ srcs }) {
+export default function Carousel() {
+    const [srcs, setSrcs] = React.useState([]);
+
     const classes = useStyles();
     const [ids, setIds] = useState([0, 1, 2]);
     const handleRight = () => {
@@ -60,6 +64,12 @@ export default function Carousel({ srcs }) {
     const handleLeft = () => {
         setIds(ids.map(id => id === 0 ? (srcs.length - 1) : id - 1));
     }
+    useEffect(() => {
+        bannerApi().then(res => {
+            setSrcs(res);
+            //console.log(res);
+        })
+    }, []);
     return (
         <div className={classes.root}>
             <IconButton onClick={handleLeft} className={classes.leftArrow}>

@@ -13,19 +13,19 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     wrapper: {
-        width: theme.spacing(28),
-        height: theme.spacing(28),
+        width: theme.spacing(27),
+        height: theme.spacing(27),
         marginTop: theme.spacing(3),
-        marginLeft: theme.spacing(3),
+        marginLeft: theme.spacing(2),
         marginBottom: theme.spacing(5),
-        marginRight: theme.spacing(3),
+        marginRight: theme.spacing(2),
     },
     image: {
-        width: theme.spacing(28),
-        height: theme.spacing(28)
+        width: theme.spacing(27),
+        height: theme.spacing(27)
     },
     title: {
-        width: theme.spacing(28),
+        width: theme.spacing(27),
         cursor: 'pointer'
     },
 

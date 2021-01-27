@@ -30,8 +30,8 @@ export const selectPlaylist = state => state.login.playlist ? state.login.playli
 export const asyncLogin = (phone, password) =>
     async dispatch => {
         const response = await loginApi(phone, password);
-        if (!response.uid) return;
         const uid = response.profile.userId;
+        if (!uid) return;
         const playlist = (await playListApi(uid)).playlist;
         dispatch(login({ password: password, phone: phone, response: response, uid: uid, playlist: playlist }));
     }

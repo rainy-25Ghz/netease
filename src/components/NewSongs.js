@@ -21,7 +21,14 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(1)
     },
     list: {
-        width: theme.spacing(55)
+        width: theme.spacing(55),
+
+    },
+    listItem: {
+        '&:hover': {
+            cursor: 'pointer',
+            backgroundColor: theme.palette.grey[100]
+        }
     }
 }));
 
@@ -38,7 +45,7 @@ export default function NewSongs() {
             <List className={classes.list}>
                 {data.slice(0, 4).map(({ album, name, artists }, index) => {
                     return (
-                        <ListItem key={index} className={classes.clickable}>
+                        <ListItem key={index} className={classes.listItem}  >
                             <ListItemAvatar>
                                 <Avatar variant="rounded" src={album.picUrl} alt='none' className={classes.avatar} />
                             </ListItemAvatar>
@@ -50,7 +57,7 @@ export default function NewSongs() {
             <List className={classes.list}>
                 {data.slice(4, 8).map(({ album, name, artists }, index) => {
                     return (
-                        <ListItem key={index} className={classes.clickable}>
+                        <ListItem key={index} className={classes.listItem} >
                             <ListItemAvatar>
                                 <Avatar variant="rounded" src={album.picUrl} alt='none' className={classes.avatar} />
                             </ListItemAvatar>
@@ -62,7 +69,7 @@ export default function NewSongs() {
             <List className={classes.list}>
                 {data.slice(8, 12).map(({ album, name, artists }, index) => {
                     return (
-                        <ListItem key={index} className={classes.clickable}>
+                        <ListItem key={index} className={classes.listItem} >
                             <ListItemAvatar>
                                 <Avatar variant="rounded" src={album.picUrl} alt='none' className={classes.avatar} />
                             </ListItemAvatar>

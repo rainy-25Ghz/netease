@@ -65,6 +65,7 @@ export default function FormDialog() {
     };
     const handleLogin = () => {
         setOpen(false);
+        console.log("dispatch")
         dispatch(asyncLogin(phone, password));
     };
 

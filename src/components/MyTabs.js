@@ -3,7 +3,8 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-
+import { useDispatch } from 'react-redux';
+import { switchTab } from '../features/switchTab/switchTabSlice';
 const AntTabs = withStyles({
     root: {
         // borderBottom: '1px solid #e8e8e8',
@@ -66,8 +67,9 @@ const useStyles = makeStyles((theme) => ({
 export default function MyTabs() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-
+    const dispatch = useDispatch();
     const handleChange = (event, newValue) => {
+        dispatch(switchTab({ tabId: newValue }));
         setValue(newValue);
     };
 

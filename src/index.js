@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ClippedDrawer from './components/ClippedDrawer';
+import App from './components/_App';
 import store from './app/store';
 import { Provider } from 'react-redux';
 // import * as serviceWorker from './serviceWorker';
@@ -17,7 +17,7 @@ import { Provider } from 'react-redux';
 // );
 ReactDOM.render(
   <Provider store={store}>
-    <ClippedDrawer />
+    <App />
   </Provider>
   , document.getElementById('root')
 )

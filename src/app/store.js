@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 // import counterReducer from '../features/counter/counterSlice';
 import loginReducer from '../features/login/loginSlice';
+import switchTabReducer from '../features/switchTab/switchTabSlice';
 export default configureStore({
   reducer: {
-    login: loginReducer
+    login: loginReducer,
+    switchTab: switchTabReducer
   },
 });
