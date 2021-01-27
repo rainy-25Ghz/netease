@@ -1,14 +1,16 @@
 # 介绍
 
-基于 react 的仿网易云 PC 客户端界面的 web app。
+基于 react hooks 的仿网易云 PC 客户端界面的 web app。
 
 # 项目技术栈
 
-脚手架：_Create React App_ + _Redux_ + _Redux Toolkit template._
+脚手架以及模板：_Create React App_ + _Redux_ + _Redux Toolkit template._
 
 UI 框架：_Material-ui_
 
 api：网易云音乐 **NodeJS 版 API**
+
+状态管理：**redux-toolkit + hooks**
 
 # 安装运行
 
